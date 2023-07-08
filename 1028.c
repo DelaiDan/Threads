@@ -5,7 +5,7 @@
 #include <time.h>
 
 #define NUM_THREADS 8 // Quantidade de Threads
-#define NUM_ELEMENTS 52 // Quantidade de elementos no Array
+#define NUM_ELEMENTS 40 // Quantidade de elementos no Array
 
 //Variaveis da logica
 typedef struct {
@@ -27,7 +27,7 @@ void *threadFunc(void *arg) {
 }
 
 int main() {
-    int input[NUM_ELEMENTS] = {13, 86, 75, 97, 76, 58, 74, 26, 32, 83, 40, 16, 52, 99, 3, 75, 77, 37, 54, 50, 21, 42, 43, 82, 14, 39, 29, 57, 16, 82, 69, 97, 58, 39, 51, 30, 39, 88, 68, 39, 71, 62, 47, 96, 14, 60, 95, 62, 11, 9, 55, 44};
+    int input[NUM_ELEMENTS] = {13, 86, 75, 97, 76, 58, 74, 26, 32, 83, 40, 16, 52, 99, 3, 75, 77, 37, 54, 50, 21, 42, 43, 82, 14, 39, 29, 57, 16, 82, 69, 97, 58, 39, 51, 30, 39, 88, 68};
     pthread_t threads[NUM_THREADS];
     ThreadArgs threadArgs[NUM_THREADS];
 
