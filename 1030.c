@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <pthread.h>
-#include <time.h>
 
 #define NUM_THREADS 16 // Quantidade de Threads
 #define NUM_ELEMENTS 52 // Quantidade de elementos no Array
@@ -34,8 +33,6 @@ int main() {
     pthread_t threads[NUM_THREADS];
     ThreadArgs threadArgs[NUM_THREADS];
 
-    clock_t start = clock();
-
     // Cria as threads e aloca as variaveis da logica
     for (int i = 0; i < NUM_ELEMENTS; i += 2) {
         threadArgs[i % NUM_THREADS].num1 = input[i];
@@ -47,12 +44,6 @@ int main() {
     for (int i = 0; i < NUM_THREADS; i++) {
         pthread_join(threads[i], NULL);
     }
-
-    clock_t end = clock();
-
-    double elapsedTime = (double)(end - start) / CLOCKS_PER_SEC;
-
-    printf("Tempo: %.6f \n", elapsedTime);
 
     return 0;
 }
